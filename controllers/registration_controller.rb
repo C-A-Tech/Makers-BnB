@@ -5,7 +5,6 @@ class BDE < Sinatra::Base
   end
 
   get '/user/new' do
-    'hello :)'
     erb :signup
   end
 
@@ -13,7 +12,8 @@ class BDE < Sinatra::Base
     @name = params[:name]
     @email = params[:email]
     @password = params[:password]
-    'you posted a new user! hi new user :)'
+    "you posted a new user! hi #{@name} :)"
+    # redirect '/home'
   end
 
   run! if app_file == $0
