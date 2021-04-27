@@ -5,7 +5,12 @@ class BDE < Sinatra::Base
   end
 
   get '/create-listing' do
-    erb(:create_listing)
+    p "hi"
+    erb :new_listing
+  end
+
+  post '/dummyHomePage' do
+
   end
 
   run! if app_file == $0
