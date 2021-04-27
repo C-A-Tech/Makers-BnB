@@ -1,14 +1,11 @@
 <h1>Create a new listing</h1>
 <ul>
-  <form action="/dummyHomePage" method="post">
+  <form action="/spaces/new" method="post">
     <li>  Title <input type="text" name="Title"> </li>
-
     <li>  Description <input type="text" name="Description"> </li>
-
+    <li>  Location <input type="text" name="Location"> </li>
     <li>  Price <input type="text" name="price"> </li>
-
-    <li>  Availibile? </li>
-    <ul>
+    <li>  Available? </li>
       <label> Monday </label>
       <input type="checkbox" name="Monday"> 
       <label> Tuesday </label>
@@ -23,7 +20,6 @@
       <input type="checkbox" name="Saturday"> 
       <label> Sunday </label>
       <input type="checkbox" name="Sunday"> 
-    </ul>
     <input type="submit" name="Submit">
   </form>
 </ul>

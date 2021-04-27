@@ -4,10 +4,12 @@ feature 'Create listing' do
 
     fill_in('Title', with: 'Nice Summer Home')
     fill_in('Description', with: '2 beds with paid wifi')
+    fill_in('Location', with: 'London, UK')
     fill_in('price', with: 23)
     check('Monday')
+    check('Friday')
     click_button('Submit')
 
-    expect(current_path).to eq('/dummyHomePage')
+    expect(current_path).to eq('/')
   end
 end
