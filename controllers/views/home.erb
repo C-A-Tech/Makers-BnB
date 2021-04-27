@@ -1,13 +1,17 @@
 <h1> All Listings </h1>
 <br>
 <ul>
+<% @space.each do |x|%>
   <li>
   <article>
-    <h2><%= @Title %></h2>
-    <p><%= @Description %></p>
-    <p><%= @Location %></p>
-    <p>£<%= @Price %> per night</p>
+    
+    <h2><%= x.title %></h2>
+    <p><%= x.description %></p>
+    <p><%= x.location %></p>
+    <p>£<%= x.price %> per night</p>
+    
   </article>
   </li>
+  <% end %>
 </ul>
     
