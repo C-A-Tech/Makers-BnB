@@ -1,4 +1,4 @@
-# frozen_string_literal: true
-# require_relative ''
+require_relative './app.rb'
 
-# run
+run BDE
+# this means 'big dad energy'
