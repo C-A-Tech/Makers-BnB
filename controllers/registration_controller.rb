@@ -1,5 +1,6 @@
-class BDE < Sinatra::Base
+# frozen_string_literal: true
 
+class BDE < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
@@ -16,5 +17,5 @@ class BDE < Sinatra::Base
     # redirect '/home'
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
