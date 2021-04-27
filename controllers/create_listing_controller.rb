@@ -9,22 +9,19 @@ class BDE < Sinatra::Base
   end
 
   post '/spaces/new' do
-    # Spaces.create()
-    session[:Title] = params[:Title]
-    session[:Description]  = params[:Description]
-    session[:Location] = params[:Location]
-    session[:Price]  = params[:Price]
-    session[:Available]  = [params[:Monday], params[:Tuesday], params[:Wednesday], params[:Thursday], params[:Friday], params[:Saturday], params[:Sunday]]
+    @Available = [params[:Monday], params[:Tuesday], params[:Wednesday], params[:Thursday], params[:Friday], params[:Saturday], params[:Sunday]]
+    
+    Spaces.create(params[:Title], params[:Description], params[:Price], params[:Location], @Available)
     redirect('/home')
   end
 
   get '/home' do
-    @Title = session[:Title] 
-    @Description = session[:Description] 
-    @Location = session[:Location]
-    @Price = session[:Price]
-    @Available = session[:Available]
-  
+    # @Title = session[:Title] 
+    # @Description = session[:Description] 
+    # @Location = session[:Location]
+    # @Price = session[:Price]
+    # @Available = session[:Available]
+    Spaces.all
     erb :home
   end  
 
