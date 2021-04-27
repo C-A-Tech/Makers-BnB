@@ -2,8 +2,9 @@ require 'user'
 
 describe User do
 
-  let(:subject) { 
+  let(:subject) {
     described_class.new(
+      id: 99,            #added by jess 
       first_name: 'Bob',
       last_name: 'Ross',
       email: 'bob@ross.com',

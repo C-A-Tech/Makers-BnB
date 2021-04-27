@@ -5,7 +5,8 @@ class User
   include DBConnection
 
   def self.create(first_name:, last_name:, email:, password:)
-    user = new(id: nil, first_name: first_name, last_name: last_name, email: email, password: password)
+    # this line can be deleted, it's never used.
+    # user = new(id: nil, first_name: first_name, last_name: last_name, email: email, password: password)
     result = DBConnection.exec(
       "INSERT INTO users (first_name, last_name, email, password)
       VALUES('#{first_name}', '#{last_name}', '#{email}', '#{password}')
