@@ -13,6 +13,7 @@ class BDE < Sinatra::Base
     @email = params[:email]
     @password = params[:password]
     "you posted a new user! hi #{@name} :)"
+    # redirect '/home'
   end
 
   run! if app_file == $0
