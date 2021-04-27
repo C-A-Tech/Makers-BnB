@@ -9,6 +9,7 @@ class BDE < Sinatra::Base
   end
 
   post '/spaces/new' do
+    # Spaces.create()
     session[:Title] = params[:Title]
     session[:Description]  = params[:Description]
     session[:Location] = params[:Location]
@@ -23,6 +24,7 @@ class BDE < Sinatra::Base
     @Location = session[:Location]
     @Price = session[:Price]
     @Available = session[:Available]
+  
     erb :home
   end  
 
