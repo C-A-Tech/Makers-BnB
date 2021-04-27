@@ -1,4 +1,6 @@
-feature 'Create listing' do
+# frozen_string_literal: true
+
+xfeature 'Create listing' do
   scenario 'have feilds to create new listing' do
     visit('/create-listing')
 
