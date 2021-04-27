@@ -5,7 +5,6 @@ feature 'Sign up' do
     fill_in('email', with: 'alice@alice.com')
     fill_in('password', with: 'averygoodpassword')
     click_button('submit')
-    p page.body
     expect(page).to have_content('you posted a new user! hi Alice :)')
   end
 end
