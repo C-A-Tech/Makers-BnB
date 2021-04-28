@@ -1,8 +1,7 @@
 require 'pg'
 # ADDED IN BY JESS to clear out USERS table and remake it for every test
-
+p 'Setting up test database!'
 def setup_test_database
-  p 'Setting up test database!'
   connection = PG.connect(dbname: 'airbnb_test')
   # connection.exec("TRUNCATE bookmarks;")
   connection.exec("DROP TABLE spaces;")
