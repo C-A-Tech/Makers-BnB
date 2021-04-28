@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Create listing' do
   scenario 'have feilds to create new listing' do
     visit('/create-listing')
