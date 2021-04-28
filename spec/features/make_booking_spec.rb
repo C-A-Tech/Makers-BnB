@@ -10,14 +10,18 @@ feature 'Make Booking' do
     fill_in('Description', with: '2 beds with paid wifi')
     fill_in('Location', with: 'London, UK')
     fill_in('Price', with: 23)
-    check('Monday')
-    check('Friday')
+  
     click_button('Submit')
     # go to /home, sees all listings.
     click_button('book')
     # save_and_open_page
     expect(current_path).to eq('/booking/new')
-    expect(page).to have_content('welcome')
+    # expect(page).to have_content('welcome')
+    check('Friday')
+    check('Wednesday')
+    click_button('Submit')
+    expect(current_path).to eq('/booking/confirmed')
+    expect(page).to have_content('Friday')
+    expect(page).to have_content('Wednesday')
   end
-
 end

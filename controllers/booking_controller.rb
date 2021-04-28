@@ -10,10 +10,25 @@ class BDE < Sinatra::Base
 
   post '/booking' do
     'welcome to the confirmation page'
-    p 'HERE'
-    p params
-    p 'HERE'
+    session[:id] = params[:id]
+    session[:title] = params[:title]
+    session[:price] = params[:price]
+    session[:description] = params[:description]
     redirect('booking/new')
+  end
+
+  get '/booking/new' do
+    erb(:my_booking)
+  end
+
+  post '/booking/confirmation' do
+    session[:day] = params[:day]
+    redirect('/booking/confirmed')
+  end
+
+  get '/booking/confirmed' do
+    @day = session[:day]
+    erb(:confirmed)
   end
 
 
