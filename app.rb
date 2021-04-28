@@ -5,6 +5,7 @@ require 'sinatra/reloader'
 
 require_relative 'controllers/registration_controller'
 require_relative 'controllers/create_listing_controller'
+require_relative 'controllers/booking_controller'
 
 # get '/' do
 #   erb :index

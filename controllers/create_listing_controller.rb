@@ -19,13 +19,6 @@ class BDE < Sinatra::Base
     redirect('/home')
   end
 
-  post '/booking' do
-    'welcome to the confirmation page'
-    p 'HERE'
-    p params
-    p 'HERE'
-    redirect('booking/new')
-  end
 
   get '/home' do
 
