@@ -1,7 +1,8 @@
-<h1> All Listings </h1>
-<br>
+<h1>All Listings</h1>
+<p>Welcome <%= @test %></p>
+<br />
 <ul>
-<% @spaces.each do |space|%>
+  <% @spaces.each do |space|%>
   <li>
   <article>
     
@@ -9,9 +10,9 @@
     <p><%= space.description %></p>
     <p><%= space.location %></p>
     <p>£<%= space.price %> per night</p>
+    <p><%= space.user_id %></p>
     
   </article>
   </li>
   <% end %>
 </ul>
-    

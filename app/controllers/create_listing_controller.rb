@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/space.rb'
-
 class BDE < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -27,15 +25,11 @@ class BDE < Sinatra::Base
       description: params[:Description],
       price: params[:Price],
       location: params[:Location],
-      availability: @Available
+      availability: @Available,
+      user_id: session[:user_id]
     )
 
     redirect('/home')
-  end
-
-  get '/home' do
-    @spaces = Space.all
-    erb :home
   end
 
   run! if app_file == $PROGRAM_NAME
