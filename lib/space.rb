@@ -4,6 +4,7 @@ class Space
   attr_reader :title, :description, :price, :location
   def initialize(args = {})
     @title = args[:title]
+    @location = args[:location]
     @description = args[:description]
     @price = args[:price]
   end
