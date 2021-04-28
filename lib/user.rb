@@ -6,6 +6,8 @@ require './lib/db_connection'
 class User
   include DBConnection
 
+  attr_reader :id, :first_name, :last_name, :email, :password
+
   def self.create(first_name:, last_name:, email:, password:)
     result = DBConnection.exec(
       "INSERT INTO users (first_name, last_name, email, password)
@@ -20,8 +22,6 @@ class User
       password: result[0]['password']
     )
   end
-
-  attr_reader :id, :first_name, :last_name, :email, :password
 
   def initialize(id: nil, first_name:, last_name:, email:, password:)
     @id         = id

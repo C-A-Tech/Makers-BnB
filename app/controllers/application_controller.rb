@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 
 class BDE < Sinatra::Base
-
   enable :sessions
 
   configure :development do
@@ -12,5 +12,4 @@ class BDE < Sinatra::Base
     @user = session[:user_id]
     erb :home
   end
-
 end

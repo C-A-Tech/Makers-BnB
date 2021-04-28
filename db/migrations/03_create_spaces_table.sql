@@ -1,7 +1,7 @@
 CREATE TABLE spaces (
   id SERIAL PRIMARY KEY,
   name VARCHAR (60) NOT NULL,
-  description VARCHAR (500) UNIQUE NOT NULL,
+  description VARCHAR (500) NOT NULL,
   price INT NOT NULL,
   availability BOOLEAN
 );
