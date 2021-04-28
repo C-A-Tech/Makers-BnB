@@ -1,0 +1,17 @@
+<h1> All Listings </h1>
+<br>
+<ul>
+<% @spaces.each do |space|%>
+  <li>
+  <article>
+    
+    <h2><%= space.title %></h2>
+    <p><%= space.description %></p>
+    <p><%= space.location %></p>
+    <p>£<%= space.price %> per night</p>
+    
+  </article>
+  </li>
+  <% end %>
+</ul>
+    
