@@ -11,7 +11,7 @@ xfeature 'Create listing' do
     check('Monday')
     check('Friday')
     click_button('Submit')
-
+    # save_and_open_page
     expect(current_path).to eq('/home')
     expect(page).to have_content('Nice Summer Home')
     expect(page).to have_content('2 beds with paid wifi')

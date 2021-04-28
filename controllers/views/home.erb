@@ -4,14 +4,15 @@
 <% @spaces.each do |space|%>
   <li>
   <article>
-    
+    <form action="/booking" method="post">
     <h2><%= space.title %></h2>
     <p><%= space.description %></p>
     <p><%= space.location %></p>
     <p>£<%= space.price %> per night</p>
-    
+    <!-- <form action="/booking" method="post"> -->
+      <button type="submit" value="submit">book</button>
+    </form>
   </article>
   </li>
   <% end %>
 </ul>
-    
