@@ -19,7 +19,7 @@ class BDE < Sinatra::Base
   end
 
   get '/home' do
-    @space = Space.all
+    @spaces = Space.all
     erb :home
   end  
 
