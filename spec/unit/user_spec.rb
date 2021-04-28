@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 require 'user'
 
 describe User do
-
-  let(:subject) {
+  let(:subject) do
     described_class.new(
-      id: 99,            #added by jess 
+      id: 99, # added by jess
       first_name: 'Bob',
       last_name: 'Ross',
       email: 'bob@ross.com',
       password: 'happyliltrees'
     )
-  }
+  end
 
   it { is_expected.to respond_to :first_name }
   it { is_expected.to respond_to :last_name }

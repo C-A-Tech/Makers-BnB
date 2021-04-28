@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pg'
 require './lib/db_connection'
 
@@ -24,12 +26,11 @@ class User
 
   attr_reader :id, :first_name, :last_name, :email, :password
 
-    def initialize(id:, first_name:, last_name:, email:, password:)
-      @id         = id
-      @first_name = first_name
-      @last_name  = last_name
-      @email      = email
-      @password   = password
-    end
-
+  def initialize(id: nil, first_name:, last_name:, email:, password:)
+    @id         = id
+    @first_name = first_name
+    @last_name  = last_name
+    @email      = email
+    @password   = password
+  end
 end

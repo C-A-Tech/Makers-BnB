@@ -5,16 +5,19 @@ class BDE < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  get '/' do
+    erb :index
+  end
+
   get '/user/new' do
     erb :signup
   end
 
-  post '/users' do
+  post '/user' do
     @name = params[:name]
     @email = params[:email]
     @password = params[:password]
-    "you posted a new user! hi #{@name} :)"
-    # redirect '/home'
+    redirect '/home'
   end
 
   run! if app_file == $PROGRAM_NAME

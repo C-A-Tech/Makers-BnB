@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/db_connection'
 
 class Space
@@ -9,13 +11,13 @@ class Space
     @price = args[:price]
   end
 
-  def self.create( args = {})
+  def self.create(args = {})
     DBConnection.exec("INSERT INTO spaces (name,description,price) VALUES('#{args[:title]}', '#{args[:description]}', '#{args[:price]}');")
   end
 
   def self.all
-    result = DBConnection.exec("SELECT * FROM spaces;")
-    
+    result = DBConnection.exec('SELECT * FROM spaces;')
+
     result.map { |space| Space.new(title: space['name'], description: space['description'], price: space['price']) }
   end
-end  
+end
