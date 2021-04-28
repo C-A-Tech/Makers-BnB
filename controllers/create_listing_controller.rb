@@ -1,4 +1,10 @@
+
 # frozen_string_literal: true
+
+require './lib/space.rb'
+
+class BDE < Sinatra::Base
+
 
 class BDE < Sinatra::Base
   configure :development do
@@ -10,20 +16,16 @@ class BDE < Sinatra::Base
   end
 
   post '/spaces/new' do
-    session[:Title] = params[:Title]
-    session[:Description] = params[:Description]
-    session[:Location] = params[:Location]
-    session[:Price] = params[:Price]
-    session[:Available] = [params[:Monday], params[:Tuesday], params[:Wednesday], params[:Thursday], params[:Friday], params[:Saturday], params[:Sunday]]
+    @Available = [params[:Monday], params[:Tuesday], params[:Wednesday], params[:Thursday], params[:Friday], params[:Saturday], params[:Sunday]]
+    
+    Space.create(title: params[:Title],description: params[:Description],price: params[:Price],location: params[:Location],availability: @Available)
     redirect('/home')
   end
 
   get '/home' do
-    @Title = session[:Title]
-    @Description = session[:Description]
-    @Location = session[:Location]
-    @Price = session[:Price]
-    @Available = session[:Available]
+
+    @spaces = Space.all
+
     erb :home
   end
 
