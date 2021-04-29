@@ -40,9 +40,9 @@ describe User do
       it 'creates a new user first name' do
         user = User.create(
           first_name: 'Bob',
-          last_name: 'Ross',
-          email: 'bob@ross.com',
-          password: 'happyliltrees'
+          last_name : 'Ross',
+          email     : 'bob@ross.com',
+          password  : 'happyliltrees'
         )
         expect(user.first_name).to eq 'Bob'
         expect(user.last_name).to eq 'Ross'

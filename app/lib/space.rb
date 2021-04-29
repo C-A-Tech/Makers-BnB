@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/db_connection'
-
 class Space
   attr_reader :title, :description, :price, :location, :user_id, :first_name, :last_name
 

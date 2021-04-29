@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 class BDE < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-  enable :sessions
+
   get '/space/new' do
     erb :new_space
   end
@@ -21,16 +18,20 @@ class BDE < Sinatra::Base
     ]
 
     Space.create(
-      title: params[:title],
-      description: params[:description],
-      price: params[:price],
-      location: params[:location],
+      title:        params[:title],
+      description:  params[:description],
+      price:        params[:price],
+      location:     params[:location],
       availability: @available,
-      user_id: session[:user_id]
+      user_id:      session[:user_id]
     )
 
     redirect('/home')
   end
 
-  run! if app_file == $PROGRAM_NAME
+  get '/home' do
+    @spaces = Space.all
+    @user = session[:user_id]
+    erb :home
+  end
 end

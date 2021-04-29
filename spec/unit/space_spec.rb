@@ -5,12 +5,18 @@ require 'space'
 describe Space do
   describe '.create' do
     it 'stores the info in database' do
-      title = 'Summer home'
+      title       = 'Summer home'
       description = 'two bed'
-      location = 'UK'
-      price = 56
+      location    = 'UK'
+      price       = 56
 
-      described_class.create(title: title, description: description, location: location, price: price)
+      described_class.create(
+        title: title, 
+        description: description, 
+        location: location, 
+        price: price
+      )
+
       result = DBConnection.exec('SELECT * FROM spaces;')
 
       expect(result[0]['name']).to eq('Summer home')
@@ -19,7 +25,12 @@ describe Space do
 
   describe '.all' do
     it 'it retrives the enteries from the spaces table' do
-      Space.create(title: 'Summer home', description: 'two bed', location: 'UK', price: 56)
+      Space.create(
+        title: 'Summer home', 
+        description: 'two bed', 
+        location: 'UK', 
+        price: 56
+      )
 
       result = Space.all
 
