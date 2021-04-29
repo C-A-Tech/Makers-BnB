@@ -12,6 +12,7 @@ class Booking
     VALUES('#{args[:days_booked]}','#{args[:booked]}','#{args[:user_id]}', '#{args[:space_id]}' RETURNING id)")
     booking = new(id: result[0]['id'])
   end
+  
   def initialize(args = {})
     @id = id
   end

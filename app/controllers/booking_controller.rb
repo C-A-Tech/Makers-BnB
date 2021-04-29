@@ -25,10 +25,8 @@ class BDE < Sinatra::Base
     # THIS PARAM DOESN'T EXIST YET BECAUSE OF MULTIPLE DAYS, OFF/ON setup.
 
     session[:day] = params[:day]
-    session[:booking_id] = Booking.create(
-      session[:space_id] = params[:id]
-      session[:day].keys
-    ).id
+    # session[:booking_id] = Booking.create(
+    session[:space_id] = params[:id]
     redirect('/booking/confirmed')
   end
 
