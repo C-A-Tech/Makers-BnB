@@ -12,9 +12,9 @@ class BDE < Sinatra::Base
   post '/user' do
     user = User.create(
       first_name: params[:first_name],
-      last_name: params[:last_name],
-      email: params[:email],
-      password: params[:password]
+      last_name:  params[:last_name],
+      email:      params[:email],
+      password:   params[:password]
     )
     session[:user_id] = user.id
     redirect '/home'

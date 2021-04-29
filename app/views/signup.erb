@@ -1,10 +1,42 @@
-<h2> Sign up with makers BnB </h2>
-<form action="/user" method="post">
-  <ul>
-    <li> First name <input type="text" name="first_name" placeholder="Enter name"> </li>
-    <li> Last name <input type="text" name="last_name" placeholder="Enter name"> </li>
-    <li> email <input type="text" name="email" placeholder="Enter address"> </li>
-    <li> password <input type="password" name="password" placeholder="Create new password"> </li>
-  </ul>
-  <button type="submit" value="submit">Sign up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makers BnB</title>
+    <link rel="stylesheet" href="/css/signup.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <img src="/images/logo.png" alt="bobross" class="logo" />
+      </div>
+      <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/user" method="post">
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First name"
+            required
+          />
+          <input type="text" name="last_name" placeholder="Surname" required />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email address"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Create new password"
+            required
+          />
+          <button type="submit" value="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
