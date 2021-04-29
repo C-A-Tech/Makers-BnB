@@ -6,8 +6,7 @@ class BDE < Sinatra::Base
   end
 
   post '/space' do
-    p params
-    Space.create(
+    user = Space.create(
       title: params[:title],
       description: params[:description],
       price: params[:price],

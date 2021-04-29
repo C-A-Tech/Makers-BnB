@@ -11,7 +11,7 @@ class Space
         '#{args[:price]}',
         '#{args[:available_from]}',
         '#{args[:available_to]}',
-        'true',
+        'TRUE',
         '#{args[:user_id]}'
       );"
     )
@@ -28,7 +28,7 @@ class Space
         available_from: space['available_from'],
         available_to: space['available_to'],
         available: space['available'],
-        user_id: space['user_id'],
+        user_id: space['user_id']
       )
     end
   end

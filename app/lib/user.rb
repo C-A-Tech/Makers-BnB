@@ -11,7 +11,7 @@ class User
       VALUES('#{first_name}', '#{last_name}', '#{email}', '#{password}')
       RETURNING id, first_name, last_name, email, password"
     )
-    user = new(
+    new(
       id: result[0]['id'],
       first_name: result[0]['first_name'],
       last_name: result[0]['last_name'],

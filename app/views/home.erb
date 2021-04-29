@@ -3,6 +3,7 @@
 <br />
 <ul>
   <% @spaces.each do |space|%>
+    <% if space.available == 't' %>
   <li>
     <form action="/booking" method="post">
       <article>
@@ -13,6 +14,7 @@
         <h2><%= space.title %></h2>
         <p><strong>£<%= space.price %> per night</strong></p>
         <p><%= space.description %></p>
+        <p><%= space.available %></p>
         <p>Available from <%= space.available_from %> until <%= space.available_to %></p>
         
 
@@ -22,13 +24,15 @@
           name="description"
           value="<%= space.description %>"
         />
-        <input type="hidden" name="location" value="<%= space.location %>" />
         <input type="hidden" name="price" value="<%= space.price %>" />
+        <input type="hidden" name="available_from" value="<%= space.available_from %>" />
+        <input type="hidden" name="available_to" value="<%= space.available_to %>" />
         <input type="hidden" name="space_id" value="<%= space.id %>" />
         <input type="submit" value="book" />
       </article>
     </form>
   </li>
+  <% end %>
   <% end %>
 </ul>
 

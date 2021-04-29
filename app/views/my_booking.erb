@@ -1,17 +1,14 @@
 Booking page
 <form action='/booking/confirmation' method='post'>
-#   calendar that takes a start and end date from the space specific id
 
 <input type="date" id="start" name="starting_date"
-       value="2018-01-01"
-       # space_id first_date
-       # space_id end_date
-       min="2018-01-01" max="2018-12-31">
+       value="<%= @available_from %>"
+
+       min="<%= @available_from %>" max="<%= @available_to %>">
 
 <input type="date" id="end" name="ending_date"
-       value="2018-07-22"
-       # space_id first_date
-       # space_id end_date
-       min="2018-01-01" max="2018-12-31">
+       value="<%= @available_to %>"
+
+       min="<%= @available_from %>" max="<%= @available_to %>">
     <input type="submit" name="Submit">
 </form>
