@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/space.rb'
-
 class BDE < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
