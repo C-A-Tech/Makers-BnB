@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Space
-  attr_reader :id, :title, :description, :price, :location, :available_from, :available_to, :available, :user_id, :first_name, :last_name
+  attr_reader :id, :title, :description, :price, :available_from, :available_to, :available, :user_id, :first_name, :last_name
 
   def self.create(args = {})
     DBConnection.exec(
@@ -25,8 +25,8 @@ class Space
         title: space['name'],
         description: space['description'],
         price: space['price'],
-        available_from: space[:available_from],
-        available_to: space[:available_to],
+        available_from: space['available_from'],
+        available_to: space['available_to'],
         available: space['available'],
         user_id: space['user_id'],
       )
@@ -36,7 +36,6 @@ class Space
   def initialize(args = {})
     @id               = args[:id]
     @title            = args[:title]
-    @location         = args[:location]
     @description      = args[:description]
     @price            = args[:price]
     @user_id          = args[:user_id]

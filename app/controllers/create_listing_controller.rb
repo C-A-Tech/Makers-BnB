@@ -6,22 +6,13 @@ class BDE < Sinatra::Base
   end
 
   post '/space' do
-    @available = [
-      params[:monday],
-      params[:tuesday],
-      params[:wednesday],
-      params[:thursday],
-      params[:friday],
-      params[:saturday],
-      params[:sunday]
-    ]
-
+    p params
     Space.create(
       title: params[:title],
       description: params[:description],
       price: params[:price],
-      location: params[:location],
-      availability: @available,
+      available_from: params[:available_from],
+      available_to: params[:available_to],
       user_id: session[:user_id]
     )
 

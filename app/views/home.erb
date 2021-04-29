@@ -3,18 +3,19 @@
 <br />
 <ul>
   <% @spaces.each do |space|%>
-    <% if space.available == "TRUE" %>
   <li>
     <form action="/booking" method="post">
       <article>
-        <h2>
+        <p>
           <%= space.first_name.capitalize %> <%= space.last_name.capitalize %>
           posted:
-        </h2>
-        <h3><%= space.title %></h3>
+        </p>
+        <h2><%= space.title %></h2>
+        <p><strong>£<%= space.price %> per night</strong></p>
         <p><%= space.description %></p>
-        <p><%= space.location %></p>
-        <p>£<%= space.price %> per night</p>
+        <p>Available from <%= space.available_from %> until <%= space.available_to %></p>
+        
+
         <input type="hidden" name="title" value="<%= space.title %>" />
         <input
           type="hidden"
@@ -28,7 +29,6 @@
       </article>
     </form>
   </li>
-  <% end %>
   <% end %>
 </ul>
 
