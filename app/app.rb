@@ -11,4 +11,3 @@ require_relative './lib/user'
 require_relative './lib/space'
 require_relative './lib/booking'
 require_relative './lib/db_connection'
-

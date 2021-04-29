@@ -1,19 +1,17 @@
 Booking page
 <form action='/booking/confirmation' method='post'>
-      <li>  days? </li>
-      <label> Monday </label>
-      <input type="checkbox" name="Monday">
-      <label> Tuesday </label>
-      <input type="checkbox" name="Tuesday">
-      <label> Wednesday </label>
-      <input type="checkbox" name="Wednesday">
-      <label> Thursday </label>
-      <input type="checkbox" name="Thursday">
-      <label> Friday </label>
-      <input type="checkbox" name="Friday">
-      <label> Saturday </label>
-      <input type="checkbox" name="Saturday">
-      <label> Sunday </label>
-      <input type="checkbox" name="Sunday">
+#   calendar that takes a start and end date from the space specific id
+
+<input type="date" id="start" name="starting_date"
+       value="2018-01-01"
+       # space_id first_date
+       # space_id end_date
+       min="2018-01-01" max="2018-12-31">
+
+<input type="date" id="end" name="ending_date"
+       value="2018-07-22"
+       # space_id first_date
+       # space_id end_date
+       min="2018-01-01" max="2018-12-31">
     <input type="submit" name="Submit">
 </form>

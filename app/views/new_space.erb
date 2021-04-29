@@ -5,21 +5,15 @@
     <li>  Description <input type="text" name="description"> </li>
     <li>  Location <input type="text" name="location"> </li>
     <li>  Price <input type="text" name="price"> </li>
-    <li>  Available? </li>
-      <label> Monday </label>
-      <input type="checkbox" name="monday"> 
-      <label> Tuesday </label>
-      <input type="checkbox" name="tuesday"> 
-      <label> Wednesday </label>
-      <input type="checkbox" name="wednesday"> 
-      <label> Thursday </label>
-      <input type="checkbox" name="thursday"> 
-      <label> Friday </label>
-      <input type="checkbox" name="friday"> 
-      <label> Saturday </label>
-      <input type="checkbox" name="saturday"> 
-      <label> Sunday </label>
-      <input type="checkbox" name="sunday"> 
+    <label for="start"></label>
+    <input type="date" id="start" name="available_from"
+     min="2021-04-01" max="2025-04-29">
+    <br>
+     <label for="end"> to:</label>
+     <br>
+     <input type="date" id="end" name="available_to"
+     min="2021-04-02" max="2025-04-30">
+    <p>space for dates</p>
     <input type="submit" name="Submit">
   </form>
 </ul>

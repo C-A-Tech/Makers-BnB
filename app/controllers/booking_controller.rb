@@ -8,9 +8,9 @@ class BDE < Sinatra::Base
 
   post '/booking' do
     'welcome to the confirmation page'
-    session[:id] = params[:id]
-    session[:title] = params[:title]
-    session[:price] = params[:price]
+    session[:space_id]    = params[:space_id]
+    session[:title]       = params[:title]
+    session[:price]       = params[:price]
     session[:description] = params[:description]
     redirect('booking/new')
   end
@@ -20,19 +20,24 @@ class BDE < Sinatra::Base
   end
 
   post '/booking/confirmation' do
-    # THIS PARAM DOESN'T EXIST YET BECAUSE OF MULTIPLE DAYS, OFF/ON setup.
-
-    session[:day] = params[:day]
-    # session[:booking_id] = Booking.create(
-    session[:space_id] = params[:id]
+    $booking = Booking.create(
+      space_id: session[:space_id],
+      user_id: session[:user_id],
+      starting_date: params[:starting_date],
+      ending_date: params[:ending_date]
+    )
     redirect('/booking/confirmed')
   end
 
   get '/booking/confirmed' do
-    @day = session[:day]
+    @title         = session[:title]
+    @description   = session[:description]
+    @price         = session[:price]
+    @starting_date = $booking.starting_date
+    @ending_date   = $booking.ending_date
+
     erb(:confirmed)
   end
-
 
   run! if app_file == $PROGRAM_NAME
 end

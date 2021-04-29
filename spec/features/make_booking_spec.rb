@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Make Booking' do
   scenario 'user can click bookings button' do
     # stealing this from another test lol
@@ -10,7 +12,7 @@ feature 'Make Booking' do
     fill_in('Description', with: '2 beds with paid wifi')
     fill_in('Location', with: 'London, UK')
     fill_in('Price', with: 23)
-  
+
     click_button('Submit')
     # go to /home, sees all listings.
     click_button('book')

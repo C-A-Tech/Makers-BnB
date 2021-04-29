@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class BDE < Sinatra::Base
-
   get '/space/new' do
     erb :new_space
   end
@@ -18,12 +17,12 @@ class BDE < Sinatra::Base
     ]
 
     Space.create(
-      title:        params[:title],
-      description:  params[:description],
-      price:        params[:price],
-      location:     params[:location],
+      title: params[:title],
+      description: params[:description],
+      price: params[:price],
+      location: params[:location],
       availability: @available,
-      user_id:      session[:user_id]
+      user_id: session[:user_id]
     )
 
     redirect('/home')

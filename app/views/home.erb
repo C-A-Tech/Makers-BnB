@@ -3,17 +3,35 @@
 <br />
 <ul>
   <% @spaces.each do |space|%>
+    <% if space.available == "TRUE" %>
   <li>
-  <article>
-    <h2><%= space.first_name.capitalize %> <%= space.last_name.capitalize %> posted: </h2>
-    <h3><%= space.title %></h3>
-    <p><%= space.description %></p>
-    <p><%= space.location %></p>
-    <p>£<%= space.price %> per night</p>
-    
-  </article>
+    <form action="/booking" method="post">
+      <article>
+        <h2>
+          <%= space.first_name.capitalize %> <%= space.last_name.capitalize %>
+          posted:
+        </h2>
+        <h3><%= space.title %></h3>
+        <p><%= space.description %></p>
+        <p><%= space.location %></p>
+        <p>£<%= space.price %> per night</p>
+        <input type="hidden" name="title" value="<%= space.title %>" />
+        <input
+          type="hidden"
+          name="description"
+          value="<%= space.description %>"
+        />
+        <input type="hidden" name="location" value="<%= space.location %>" />
+        <input type="hidden" name="price" value="<%= space.price %>" />
+        <input type="hidden" name="space_id" value="<%= space.id %>" />
+        <input type="submit" value="book" />
+      </article>
+    </form>
   </li>
+  <% end %>
   <% end %>
 </ul>
 
-<a href="/space/new"><button type="button"><span></span>List a space</button></a>
+<a href="/space/new"
+  ><button type="button"><span></span>List a space</button></a
+>
