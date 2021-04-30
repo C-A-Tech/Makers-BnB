@@ -20,16 +20,11 @@ class BDE < Sinatra::Base
     end
   end
 
-  # post '/user' do
-  #   user = User.create(
-  #     first_name: params[:first_name],
-  #     last_name:  params[:last_name],
-  #     email:      params[:email],
-  #     password:   params[:password]
-  #   )
-  #   session[:user_id] = user.id
-  #   redirect '/home'
-  # end
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'You have signed out.'
+    redirect('/')
+  end
 
   run! if app_file == $PROGRAM_NAME
 end
