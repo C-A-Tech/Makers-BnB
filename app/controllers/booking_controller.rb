@@ -12,6 +12,7 @@ class BDE < Sinatra::Base
     session[:title]       = params[:title]
     session[:price]       = params[:price]
     session[:description] = params[:description]
+    session[:image]       = params[:image]
     session[:available_from] = params[:available_from]
     session[:available_to] = params[:available_to]
     redirect('booking/new')
@@ -20,6 +21,7 @@ class BDE < Sinatra::Base
   get '/booking/new' do
     @title = session[:title]
     @price = session[:price]
+    @image = session[:image]
     @available_from = session[:available_from]
     @available_to = session[:available_to]
     erb(:my_booking)
