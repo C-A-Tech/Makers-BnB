@@ -21,7 +21,7 @@ class BDE < Sinatra::Base
     #seemed quicker than making a retrieve method.
     session[:user] = user
     @first_name = params[:first_name]
-    redirect '/home'
+    redirect '/login'
   end
   # added by jess, fri 12.17
   get '/profile' do
