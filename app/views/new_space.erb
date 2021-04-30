@@ -1,19 +1,53 @@
-<h1>Create a new listing</h1>
-<ul>
-  <form action="/space" method="post">
-    <li>  Title <input type="text" name="title"> </li>
-    <li>  Description <input type="text" name="description"> </li>
-    <li>  Location <input type="text" name="location"> </li>
-    <li>  Price <input type="text" name="price"> </li>
-    <label for="start"></label>
-    <input type="date" id="start" name="available_from"
-     min="2021-04-01" max="2025-04-29">
-    <br>
-     <label for="end"> to:</label>
-     <br>
-     <input type="date" id="end" name="available_to"
-     min="2021-04-02" max="2025-04-30">
-    <p>space for dates</p>
-    <input type="submit" name="Submit">
-  </form>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makers Bnb</title>
+    <link rel="stylesheet" href="/css/new_space.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/images/logo.png" alt="bobross" class="logo" />
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>List a New Space</h2>
+        <form action="/space" method="post">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" placeholder="Title" required />
+          <label for="description">Description</label>
+          <textarea rows = "4" name="description" id="description" placeholder="Description" required /></textarea>
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" placeholder="Location" required />
+          <label for="title">Price per night</label>
+          <input type="text" name="price" id="price" placeholder="Price per night" required />
+          <label for="start">Available from:</label>
+          <span><input
+            type="date"
+            id="start"
+            name="available_from"
+            min="2021-04-01"
+            max="2025-04-29"
+          /></span>
+          <br />
+          <br />
+          <label for="end">Available until: </label>
+          <input
+            type="date"
+            id="end"
+            name="available_to"
+            min="2021-04-02"
+            max="2025-04-30"
+          />
+          <br />
+          <input type="submit" name="Submit" />
+        </form>
+    </div>
+  </body>
+</html>

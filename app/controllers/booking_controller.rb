@@ -18,6 +18,8 @@ class BDE < Sinatra::Base
   end
 
   get '/booking/new' do
+    @title = session[:title]
+    @price = session[:price]
     @available_from = session[:available_from]
     @available_to = session[:available_to]
     erb(:my_booking)
