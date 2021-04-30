@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
+require 'mailslurp_client'
+
 class BDE < Sinatra::Base
+
+  MailSlurpClient.configure do |config|
+      config.api_key['x-api-key'] = "d42cb6a709ab3e90b5975b5e550cb85ab4f592342def3237f5fdd338f6f8c7ab"
+  end
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -32,6 +39,21 @@ class BDE < Sinatra::Base
       starting_date: params[:starting_date],
       ending_date: params[:ending_date]
     )
+
+    inbox_controller = MailSlurpClient::InboxControllerApi.new
+inbox = inbox_controller.create_inbox
+
+inbox_controller.send_email(inbox.id, {
+    send_email_options: {
+        to: ["w1783349@my.westminer.ac.uk"],
+        subject: "Test",
+        isHTML: true,
+        body: <<-HEREDOC
+          <h1>Hello!</h1>
+          <p>MailSlurp supports HTML</p>
+        HEREDOC
+    }
+})
     redirect('/booking/confirmed')
   end
 
