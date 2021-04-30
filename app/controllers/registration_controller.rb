@@ -17,8 +17,19 @@ class BDE < Sinatra::Base
       password:   params[:password]
     )
     session[:user_id] = user.id
+    #added by jess to populate profile page.
+    #seemed quicker than making a retrieve method.
+    session[:user] = user
     redirect '/home'
   end
+  # added by jess, fri 12.17
+  get '/profile' do
+    @b = Booking.retrieve(session[:user_id])
+    p session[:user]
+    p @b
+    erb :user_profile
+  end
+  # added by jess, fri 12.17
 
   run! if app_file == $PROGRAM_NAME
 end
