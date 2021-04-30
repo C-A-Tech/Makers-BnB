@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 class Space
-  attr_reader :id, :title, :description, :price, :available_from, :available_to, :available, :user_id, :first_name, :last_name
+  attr_reader :id, :title, :description, :price, :available_from, :available_to, :available, :user_id, :first_name, :last_name, :image
 
   def self.create(args = {})
     DBConnection.exec(
-      "INSERT INTO spaces (name, description, price, available_from, available_to, available, user_id) VALUES(
+      "INSERT INTO spaces (name, description, price, available_from, available_to, available, user_id, space_image) VALUES(
         '#{args[:title]}',
         '#{args[:description]}',
         '#{args[:price]}',
         '#{args[:available_from]}',
         '#{args[:available_to]}',
         'TRUE',
-        '#{args[:user_id]}'
+        '#{args[:user_id]}',
+        '#{args[:image]}'
       );"
     )
   end
@@ -28,7 +29,8 @@ class Space
         available_from: space['available_from'],
         available_to: space['available_to'],
         available: space['available'],
-        user_id: space['user_id']
+        user_id: space['user_id'],
+        image: space['space_image']
       )
     end
   end
@@ -44,6 +46,7 @@ class Space
     @available_to     = args[:available_to]
     @first_name       = find_user['first_name']
     @last_name        = find_user['last_name']
+    @image            = args[:image]
   end
 
   private
