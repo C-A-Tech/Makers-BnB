@@ -8,3 +8,4 @@ CREATE TABLE spaces (
   available BOOLEAN
 );
 ALTER TABLE spaces ADD COLUMN user_id INT REFERENCES users(id);
+ALTER TABLE spaces ADD COLUMN space_image VARCHAR (500);

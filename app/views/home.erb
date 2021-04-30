@@ -24,49 +24,58 @@
             <li>
               <form action="/booking" method="post">
                 <article>
-                  <p>
-                    <%= space.first_name.capitalize %> <%=
-                    space.last_name.capitalize %> posted:
-                  </p>
-                  <h2><%= space.title %></h2>
-                  <p><strong>£<%= space.price %> per night</strong></p>
-                  <p><%= space.description %></p>
-                  <p>
-                    Available from <%= space.available_from %> until <%=
-                    space.available_to %>
-                  </p>
-                  <img src="https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/04/holidaycottage-960x480.jpg" alt="cottage">
-                  <input
-                    type="hidden"
-                    name="title"
-                    value="<%= space.title %>"
-                  />
-                  <input
-                    type="hidden"
-                    name="description"
-                    value="<%= space.description %>"
-                  />
-                  <input
-                    type="hidden"
-                    name="price"
-                    value="<%= space.price %>"
-                  />
-                  <input
-                    type="hidden"
-                    name="available_from"
-                    value="<%= space.available_from %>"
-                  />
-                  <input
-                    type="hidden"
-                    name="available_to"
-                    value="<%= space.available_to %>"
-                  />
-                  <input
-                    type="hidden"
-                    name="space_id"
-                    value="<%= space.id %>"
-                  />
-                  <input class="book" type="submit" value="Book" />
+                  <div class="description">
+                    <p>
+                      <%= space.first_name.capitalize %> <%=
+                      space.last_name.capitalize %> posted:
+                    </p>
+                    <h2><%= space.title %></h2>
+                    <p><strong>£<%= space.price %> per night</strong></p>
+                    <p><%= space.description %></p>
+                    <p>
+                      Available from <%= space.available_from %> until <%=
+                      space.available_to %>
+                    </p>
+                  </div>
+                  <div class="img_button">
+                    <img src='images/new_space_uploads/<%= space.image %>' >
+                    <input
+                      type="hidden"
+                      name="title"
+                      value="<%= space.title %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="description"
+                      value="<%= space.description %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="price"
+                      value="<%= space.price %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="image"
+                      value="<%= space.image %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="available_from"
+                      value="<%= space.available_from %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="available_to"
+                      value="<%= space.available_to %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="space_id"
+                      value="<%= space.id %>"
+                    />
+                    <input class="book" type="submit" value="Book" />
+                  </div>
                 </article>
               </form>
             </li>
