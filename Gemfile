@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rack'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'mailslurp_client', '~> 8.3', '>= 8.3.0'
 
 group :development do
   gem 'shotgun'
