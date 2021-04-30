@@ -3,6 +3,8 @@ CREATE TABLE spaces (
   name VARCHAR (60) NOT NULL,
   description VARCHAR (500) NOT NULL,
   price INT NOT NULL,
-  availability BOOLEAN
+  available_from DATE,
+  available_to DATE,
+  available BOOLEAN
 );
 ALTER TABLE spaces ADD COLUMN user_id INT REFERENCES users(id);

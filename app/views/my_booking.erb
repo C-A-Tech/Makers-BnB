@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makers Bnb</title>
+    <link rel="stylesheet" href="/css/my_booking.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/images/logo.png" alt="bobross" class="logo" />
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/space/new">List a Space</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
+    <h1>Booking Confirmation</h1>
+    <div class="container">
+      <h2><%= @title %></h2>
+      <h3>£<%= @price %> per night</h3>
+      <br />
+      <img
+        src="https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/04/holidaycottage-960x480.jpg"
+        alt="cottage"
+      />
+      <form action="/booking/confirmation" method="post">
+        <label for="starting_date">Arrival: </label>
+        <input
+          type="date"
+          id="start"
+          name="starting_date"
+          value="<%= @available_from %>"
+          min="<%= @available_from %>"
+          max="<%= @available_to %>"
+        />
+        <br />
+        <br />
+        <label for="starting_date">Departure: </label>
+        <input
+          type="date"
+          id="end"
+          name="ending_date"
+          value="<%= @available_to %>"
+          min="<%= @available_from %>"
+          max="<%= @available_to %>"
+        />
+        <br />
+        <input type="submit" name="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makers BnB</title>
+  <link rel="stylesheet" href="/css/confirmed.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="/images/logo.png" alt="bobross" class="logo" />
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/space/new">List a Space</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+  </div>
+  <h1>Booking Confirmed!</h1>
+<h2>You're staying at <strong><%= @title %></strong> </h2></br>
+<h3> <%= "#{@description}" %> </h3>
+<br/>
+<p> <%= "From #{@starting_date} until #{@ending_date}" %> </p></br>
+
+<a href="/home"
+  ><button type="button"><span></span>Back to Home</button></a
+>
+</body>
+</html>
