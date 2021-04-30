@@ -14,7 +14,7 @@
         <li><a href="/home">Home</a></li>
         <li><a href="/space/new">List a Space</a></li>
         <li><a href="#">Search</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="/profile">Profile</a></li>
       </ul>
     </div>
     <h1>Booking Confirmation</h1>
@@ -22,10 +22,7 @@
       <h2><%= @title %></h2>
       <h3>£<%= @price %> per night</h3>
       <br />
-      <img
-        src="https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/04/holidaycottage-960x480.jpg"
-        alt="cottage"
-      />
+      <img src='/images/new_space_uploads/<%=@image%>' >
       <form action="/booking/confirmation" method="post">
         <label for="starting_date">Arrival: </label>
         <input

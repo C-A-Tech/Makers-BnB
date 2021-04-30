@@ -21,6 +21,21 @@ class Booking
     )
   end
 
+  ## added by jess
+  def self.retrieve(user_id)
+    result = DBConnection.exec("SELECT * FROM bookings WHERE user_id = #{user_id};")
+
+    result.map do |row|
+      Booking.new(
+        starting_date: row['starting_date'],
+        ending_date: row['ending_date'],
+        user_id: row['user_id'],
+        space_id: row['space_id'],
+      )
+    end
+  end
+  ## added by jess
+
   def initialize(args = {})
     @id               = args[:id]
     @space_id         = args[:space_id]

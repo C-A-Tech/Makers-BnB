@@ -10,6 +10,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: white;
+  padding: 40px;
+  margin: auto;
+  text-align: center;
 }
 
 .navbar {
@@ -53,36 +57,8 @@ body {
   width: 100%;
 }
 
-h1 {
-  text-align: center;
-  font-size: 60px;
-  color: white;
-  font-weight: lighter;
-}
-
-h2 {
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-ul {
-  text-align: center;
-  list-style: inside;
-}
-
-.description {
-  height: 200px;
-  overflow: auto;
-  margin-bottom: 40px;
-}
-
-.description::-webkit-scrollbar {
-  display: none;
-}
-
 .container {
   max-width: 350px;
-  height: 600px;
   border-radius: 20px;
   margin: 2%;
   background: rgba(0, 0, 0, 0.5);
@@ -92,7 +68,6 @@ ul {
   margin-top: 100px;
   display: inline-block;
   position: relative;
-  overflow: hidden;
 }
 
 .container p {
@@ -116,20 +91,35 @@ ul {
   margin-bottom: 20px;
 }
 
-.book {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.3);
-  border: none;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  padding: 10px;
+h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
 }
 
-.book:hover {
-  cursor: pointer;
+h2 {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+button {
+  width: 30%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0.7;
+  border-radius: 20px;
+  font-size: 20px;
   color: white;
+}
+
+button:hover {
+  cursor: pointer;
   background: rgba(255, 255, 255, 0.6);
 }

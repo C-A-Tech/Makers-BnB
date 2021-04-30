@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makers BnB</title>
+    <link rel="stylesheet" href="/css/profile.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/images/logo.png" alt="bobross" class="logo" />
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/space/new">List a Space</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="container">
+      <h2>Hi, <%= session[:user].first_name %> </h2>
+      <br>
+      <h3> You have bookings for the following dates: </h3>
+      <br>
+      <br>
+        <% @b.each do |booking|%>
+            from <%= booking.starting_date %> to <%= booking.ending_date %>
+            <br>
+            <br>
+        <% end %>
+      <br/>
+    </div>
+
+  </body>
+</html>
