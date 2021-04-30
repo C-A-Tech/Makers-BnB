@@ -2,11 +2,13 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 
 require_relative 'controllers/registration_controller'
 require_relative 'controllers/create_listing_controller'
 require_relative 'controllers/application_controller'
 require_relative 'controllers/booking_controller'
+require_relative 'controllers/login_controller'
 require_relative './lib/user'
 require_relative './lib/space'
 require_relative './lib/booking'

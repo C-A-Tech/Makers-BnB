@@ -20,6 +20,19 @@ class User
     )
   end
 
+  def self.authenticate(email:, password:)
+    result = DBConnection.exec("SELECT * FROM users WHERE email = '#{email}'")
+    return unless result.any?
+    return unless result[0]['password'] == password
+    new(
+      id: result[0]['id'],
+      first_name: result[0]['first_name'],
+      last_name: result[0]['last_name'],
+      email: result[0]['email'],
+      password: result[0]['password']
+    )
+  end
+
   def initialize(id: nil, first_name:, last_name:, email:, password:)
     @id         = id
     @first_name = first_name
