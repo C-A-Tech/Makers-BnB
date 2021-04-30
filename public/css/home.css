@@ -110,10 +110,11 @@ ul {
   list-style-type: none;
 }
 
-.container img {
+.img_button img {
   width: 100%;
-  height: auto;
+  height: 200px;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .book {

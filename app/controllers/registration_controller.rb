@@ -20,13 +20,13 @@ class BDE < Sinatra::Base
     #added by jess to populate profile page.
     #seemed quicker than making a retrieve method.
     session[:user] = user
+    @first_name = params[:first_name]
     redirect '/home'
   end
   # added by jess, fri 12.17
   get '/profile' do
     @b = Booking.retrieve(session[:user_id])
-    p session[:user]
-    p @b
+    
     erb :user_profile
   end
   # added by jess, fri 12.17

@@ -13,6 +13,7 @@ class BDE < Sinatra::Base
   
     if user
       session[:user_id] = user.id
+      session[:user_firstname] = user.first_name
       redirect('/home')
     else
       flash[:notice] = 'Invalid email or password'

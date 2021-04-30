@@ -10,6 +10,7 @@ class BDE < Sinatra::Base
   post '/booking' do
     'welcome to the confirmation page'
     session[:space_id]    = params[:space_id]
+    session[:user_id]    = params[:user_id]
     session[:title]       = params[:title]
     session[:price]       = params[:price]
     session[:description] = params[:description]

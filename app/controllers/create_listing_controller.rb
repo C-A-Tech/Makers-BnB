@@ -23,6 +23,8 @@ class BDE < Sinatra::Base
   get '/home' do
     @spaces = Space.all
     @user = session[:user_id]
+    @first_name = session[:user_firstname]
+    
     erb :home
   end
 end
