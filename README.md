@@ -7,16 +7,20 @@ The aim of this challeng was to build an AirBnB inspired web app that allows use
 
 
 
+https://user-images.githubusercontent.com/69041095/126149409-40abde79-4598-4f97-a5fb-6e96b94cfb8d.mp4
 
-## Features ##
 
-Create new user
-Log in with account details
-List a space 
-View all spaces
-Book a space
-View all bookings 
-Availabilty of space is dependent on previous bookings
+
+
+### Features ###
+
+- Create new users account
+- Log in with account details
+- List a space (including a picture, description and availabilty dates)
+- View all spaces
+- Book a space
+- View all bookings 
+- Availabile dates for a space changes as more bookings are made
 
 
 ### Setup ###
@@ -45,6 +49,7 @@ rackup
 Testing:
 * RSpec
 * Capybara
+
 
 ### User Stories ###
 
