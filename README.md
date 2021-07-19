@@ -1,4 +1,50 @@
-Simple website similar to AirBnB where users can both host and rent spaces. 
+## Makers BnB ##
+
+The aim of this challeng was to build an AirBnB inspired web app that allows users to list and book spaces
+
+
+### Live Demo ###
+
+
+
+
+## Features ##
+
+Create new user
+Log in with account details
+List a space 
+View all spaces
+Book a space
+View all bookings 
+Availabilty of space is dependent on previous bookings
+
+
+### Setup ###
+1. Clone the repo
+2. Install the required gems:
+
+```
+bundle install
+```
+3. Set-up the PostgreSQL database, instructions can be found in db/migrations
+
+4. Run the app
+```
+rackup
+```
+5. In your browser, head to localhost:9292
+
+
+
+### Tech Stack ###
+* Ruby 
+* Sinatra
+* PostgreSQL
+* HTML & CSS
+
+Testing:
+* RSpec
+* Capybara
 
 ### User Stories ###
 
@@ -64,4 +110,3 @@ Simple website similar to AirBnB where users can both host and rent spaces.
     So that my choices arent constrained
     The property should remain bookable until confirmation
     ```
-### Setup ###
